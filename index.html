@@ -29,7 +29,7 @@
         .section { 
             background: white; padding: 30px; border-radius: 12px; 
             box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; 
-            scroll-margin-top: 40px; /* 이동 시 여백 생성 */
+            scroll-margin-top: 40px; 
         }
 
         h1 { font-size: 2.5rem; color: #2d3436; margin-bottom: 10px; }
@@ -44,6 +44,13 @@
         .project-title { font-weight: bold; font-size: 1.2em; color: #2d3436; }
         .date { color: #636e72; font-size: 0.9em; margin-bottom: 10px; display: block; }
         
+        .github-link {
+            display: inline-block; margin-top: 10px; padding: 8px 15px;
+            background-color: #24292e; color: white; text-decoration: none;
+            border-radius: 6px; font-size: 0.9em; transition: 0.2s;
+        }
+        .github-link:hover { background-color: #444; }
+
         /* 모바일 대응 */
         @media (max-width: 768px) {
             .sidebar { width: 100%; height: auto; position: relative; }
@@ -66,13 +73,13 @@
     <main class="main-content">
         <header id="home">
             <h1>안현건</h1>
-            <p style="font-size: 1.1rem; color: #636e72;">개발자입니다.</p>
+            <p style="font-size: 1.1rem; color: #636e72;"> test </p>
             <hr>
         </header>
 
         <section id="intro" class="section">
             <h2>💡 자기소개</h2>
-            <p>현재 졸업 프로젝트를 통해 하드웨어 제어와 소프트웨어 설계의 통합 역량을 쌓고 있으며, AI API를 활용한 서비스 고도화에도 경험이 있습니다.</p>
+            <p>현재 졸업 프로젝트를 통해 하드웨어 제어와 소프트웨어 설계의 통합 역량을 쌓고 있습니다.</p>
         </section>
 
         <section id="tech" class="section">
@@ -97,6 +104,7 @@
                     <li>데이터 정밀도 분석 및 ERD 기반 데이터베이스 구조 최적화</li>
                     <li>현재 결과 분석 및 최종 기술 보고서 작성 단계</li>
                 </ul>
+                <a href="https://github.com/tema-8080" target="_blank" class="github-link">🔗 팀 프로젝트 저장소 바로가기</a>
             </div>
         </section>
 
