@@ -5,55 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>안현건 | 이력서</title>
     <style>
-        body { font-family: 'Pretendard', sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 40px 20px; background-color: #f8f9fa; }
-        h1 { color: #2d3436; border-bottom: 2px solid #2d3436; padding-bottom: 10px; }
-        h2 { color: #0984e3; margin-top: 30px; border-left: 4px solid #0984e3; padding-left: 10px; }
-        .section { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        .tech-stack span { background: #dfe6e9; padding: 4px 10px; border-radius: 4px; font-size: 0.9em; margin-right: 5px; display: inline-block; margin-bottom: 5px; }
-        .project-item { margin-bottom: 15px; }
-        .project-title { font-weight: bold; font-size: 1.1em; color: #2d3436; }
-        .date { color: #636e72; font-size: 0.9em; }
+        /* 기본 레이아웃 */
+        body { 
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; 
+            line-height: 1.6; color: #333; margin: 0; display: flex; background-color: #f0f2f5; 
+        }
+
+        /* 사이드바 스타일 */
+        .sidebar {
+            width: 250px; height: 100vh; background: #2d3436; color: white;
+            position: fixed; display: flex; flex-direction: column; padding: 20px; box-sizing: border-box;
+        }
+        .sidebar h2 { font-size: 1.2rem; margin-bottom: 30px; color: #0984e3; text-align: center; }
+        .sidebar a {
+            color: #b2bec3; text-decoration: none; margin-bottom: 15px; font-size: 1rem;
+            transition: 0.3s; display: block; padding: 10px; border-radius: 5px;
+        }
+        .sidebar a:hover { background: #0984e3; color: white; }
+
+        /* 메인 콘텐츠 스타일 */
+        .main-content { margin-left: 250px; padding: 40px; width: 100%; max-width: 900px; }
+        
+        .section { 
+            background: white; padding: 30px; border-radius: 12px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; 
+            scroll-margin-top: 40px; /* 이동 시 여백 생성 */
+        }
+
+        h1 { font-size: 2.5rem; color: #2d3436; margin-bottom: 10px; }
+        h2 { color: #0984e3; border-left: 5px solid #0984e3; padding-left: 15px; margin-bottom: 20px; }
+        
+        .tech-stack span { 
+            background: #e1f5fe; color: #0288d1; padding: 5px 12px; 
+            border-radius: 20px; font-size: 0.85em; font-weight: bold; margin: 0 5px 8px 0; display: inline-block; 
+        }
+        .project-item { margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px dotted #eee; }
+        .project-item:last-child { border-bottom: none; }
+        .project-title { font-weight: bold; font-size: 1.2em; color: #2d3436; }
+        .date { color: #636e72; font-size: 0.9em; margin-bottom: 10px; display: block; }
+        
+        /* 모바일 대응 */
+        @media (max-width: 768px) {
+            .sidebar { width: 100%; height: auto; position: relative; }
+            .main-content { margin-left: 0; padding: 20px; }
+            body { flex-direction: column; }
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>안현건 (Ahn Hyun-geon)</h1>
-        <p>123</p>
-    </header>
+    <nav class="sidebar">
+        <h2>PORTFOLIO</h2>
+        <a href="#home">🔝 Home</a>
+        <a href="#intro">💡 자기소개</a>
+        <a href="#tech">🛠 기술 스택</a>
+        <a href="#projects">🚀 프로젝트</a>
+        <a href="#edu">🎓 교육</a>
+    </nav>
 
-    <div class="section">
-        <h2>💡 자기소개</h2>
-        <p>현재 졸업 프로젝트로 IoT 기반의 스마트 시스템을 개발하며 하드웨어와 소프트웨어의 통합을 경험하고 있습니다.</p>
-    </div>
+    <main class="main-content">
+        <header id="home">
+            <h1>안현건</h1>
+            <p style="font-size: 1.1rem; color: #636e72;">개발자입니다.</p>
+            <hr>
+        </header>
 
-    <div class="section">
-        <h2>🛠 기술 스택</h2>
-        <div class="tech-stack">
-            <strong>Languages:</strong> <span>Python</span> <span>TypeScript</span> <span>JavaScript</span><br>
-            <strong>Frameworks & APIs:</strong> <span>Google Gemini API</span> <span>Node.js</span><br>
-            <strong>Others:</strong> <span>Git</span> <span>Database Design (ERD)</span> <span>Linux</span>
-        </div>
-    </div>
+        <section id="intro" class="section">
+            <h2>💡 자기소개</h2>
+            <p>현재 졸업 프로젝트를 통해 하드웨어 제어와 소프트웨어 설계의 통합 역량을 쌓고 있으며, AI API를 활용한 서비스 고도화에도 경험이 있습니다.</p>
+        </section>
 
-    <div class="section">
-        <h2>🚀 프로젝트</h2>
-        <div class="project-item">
-            <div class="project-title">스마트 약통 관리 시스템 (Smart Pillbox)</div>
-            <div class="date">졸업 프로젝트 | 2026.03 - 현재</div>
-            <ul>
-                <li>IoT 기술을 활용한 복약 알림 및 관리 시스템 구축</li>
-                <li>사용자 복약 데이터를 효율적으로 관리하기 위한 DB 설계(ERD) 및 구현</li>
-                <li>정확도 분석 및 최종 결과 보고서 작성 중</li>
-            </ul>
-        </div>
-    </div>
+        <section id="tech" class="section">
+            <h2>🛠 기술 스택</h2>
+            <div class="tech-stack">
+                <strong>Languages:</strong><br>
+                <span>Python</span> <span>TypeScript</span> <span>JavaScript</span><br><br>
+                <strong>AI & Backend:</strong><br>
+                <span>Google Gemini API</span> <span>Node.js</span> <span>SQL</span><br><br>
+                <strong>Tools:</strong><br>
+                <span>Git</span> <span>GitHub</span> <span>VS Code</span>
+            </div>
+        </section>
 
-    <div class="section">
-        <h2>🎓 교육</h2>
-        <p><strong>동양미래대학교</strong><br>
-        컴퓨터소프트웨어공학과 전공 (졸업 예정)</p>
-    </div>
+        <section id="projects" class="section">
+            <h2>🚀 프로젝트</h2>
+            <div class="project-item">
+                <span class="project-title">스마트 약통 관리 시스템 (Smart Pillbox)</span>
+                <span class="date">졸업 프로젝트 | 2026.03 - 현재</span>
+                <ul>
+                    <li>복약 관리 자동화를 위한 IoT 시스템 설계</li>
+                    <li>데이터 정밀도 분석 및 ERD 기반 데이터베이스 구조 최적화</li>
+                    <li>현재 결과 분석 및 최종 기술 보고서 작성 단계</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="edu" class="section">
+            <h2>🎓 교육</h2>
+            <p><strong>[동양미래대학교]</strong></p>
+            <p>컴퓨터소프트웨어공학과 전공 (졸업 예정)</p>
+        </section>
+    </main>
 
 </body>
 </html>
